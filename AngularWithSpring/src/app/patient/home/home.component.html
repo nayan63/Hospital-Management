@@ -1,0 +1,19 @@
+<!-- Sidebar -->
+<nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+    <div class="position-sticky">
+        <div class="list-group list-group-flush mx-3 mt-4">
+            <a routerLink="list" routerLinkActive="active"
+                class="list-group-item list-group-item-action py-2 ripple">
+                <i class="fas fa-chart-area fa-fw me-3"></i><span>List</span>
+            </a>
+            <a routerLink="add" routerLinkActive="active"
+                class="list-group-item list-group-item-action py-2 ripple ">
+                <i class="fas fa-chart-area fa-fw me-3"></i><span>Add</span>
+            </a>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
+<!-- Sidebar -->

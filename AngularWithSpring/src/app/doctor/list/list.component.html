@@ -1,0 +1,28 @@
+<div class="table-container">
+    <input type="text" #name (input)="search(name.value)" placeholder="Search By Name">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Specialization</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody class="table-striped">
+            <tr *ngFor="let doctor of doctors; let i=index">
+                <td>{{i+1}}</td>
+                <td>{{doctor.name}}</td>
+                <td>{{doctor.age}}</td>
+                <td>{{doctor.gender}}</td>
+                <td>{{doctor.specialist}}</td>
+                <td>
+                    <a class="btn btn-warning" [routerLink]="['../update',doctor.id]">Update</a> &nbsp;
+                    <button class="btn btn-danger" (click)="deleteDoctor(doctor.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,17 @@
+.error-container{
+    text-align: center;
+    padding-top: 20%;
+}
+
+.error-container h1
+{
+    font-size: 100px;
+    font-weight: 900;
+    background-image: url('../../assets/text-back.jpg');
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.error-container p
+{
+    font-size: 30px;
+}

@@ -1,0 +1,42 @@
+<div class="container-search">
+    <div class="search-section">
+        <div class="form-group col-md-6">
+            <select class="form-select" #doctor (change)="viewDoctor(doctor.value)">
+                <option value="">SELECT</option>
+                <option *ngFor="let doctor of doctors" value="{{doctor.id}}">{{doctor.name}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="container-result">
+        <div class="p-3 border col-md-12" *ngIf="singleDoctor; else elseBlock">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Specialization</th>
+                        <th>Number Of Patient Attend</th>
+                    </tr>
+                </thead>
+                <tbody class="table-striped">
+                    <tr>
+                        <td>{{singleDoctor.name}}</td>
+                        <td>{{singleDoctor.age}}</td>
+                        <td>{{singleDoctor.gender}}</td>
+                        <td>{{singleDoctor.specialist}}</td>
+                        <td>{{singleDoctor.numberOfPatient}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <ng-template #elseBlock>
+            <div class="alert alert-warning d-flex align-items-center" role="alert" *ngIf="errorMessage">
+                <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                <div>
+                  {{errorMessage}}
+                </div>
+              </div>              
+        </ng-template>
+    </div>
+</div>

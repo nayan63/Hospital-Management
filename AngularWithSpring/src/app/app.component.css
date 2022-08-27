@@ -1,0 +1,42 @@
+.bg-green, .bg-green a
+{
+    z-index: 999;
+    background-color: rgba(37, 43, 36, 0.61);
+    color: rgb(255, 255, 255);
+}
+.bg-green a
+{
+    padding: 3px 8px 3px 8px;
+    border-radius: 3px;
+    background-color: darkgray;
+    color: blue;
+}
+a.active
+{
+    color: brown !important;
+    background-color: aliceblue !important;
+}
+.nav-item
+{
+    padding: 0 3px 0 3px;
+}
+a.nav-link
+{
+    font-size: 18px;
+    transition: background-color 2s;
+}
+a.nav-link:hover
+{
+    background-color: coral;
+    color: aqua;
+    font-size: 20px;
+} 
+
+.navbar-expand-lg {
+    height: 70px;
+}
+nav
+{
+    position: fixed;
+    width: 100%;
+}

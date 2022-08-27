@@ -1,0 +1,9 @@
+.table-container
+{
+    padding: 20px;
+}
+.thead-dark
+{
+    background-color: rgba(10, 21, 172, 0.425);
+    color: brown;
+}

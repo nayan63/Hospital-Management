@@ -1,0 +1,42 @@
+<div class="form-container">
+    <h1>Add Patient</h1>
+    <div class="col-md-5 doctorform">
+        <form [formGroup]="patientForm" (ngSubmit)="addPatient()">
+            <div class="form-group">
+                <label for="">Name <span class="error">*</span></label>
+                <input type="text" formControlName="name" class="form-control" placeholder="Enter Name">
+                <small class="form-text" [ngClass]="{'error':name && name.touched && name.invalid}">Only Alphabets are
+                    allowed</small>
+            </div>
+            <div class="form-group">
+                <label for="">Age<span class="error">*</span></label>
+                <input type="number" formControlName="age" class="form-control" placeholder="Enter Age">
+                <small class="error" *ngIf="age && age.touched && age.invalid">Required field</small>
+            </div>
+            <div class="form-group">
+                <label for="">Doctor<span class="error">*</span></label>
+                <select formControlName="visitedDoctor" class="form-control">
+                    <option *ngFor="let doctor of doctorList" value="{{doctor.id}}">{{doctor.name}}</option>
+                </select>
+                <small class="error" *ngIf="visitedDoctor && visitedDoctor.touched && visitedDoctor.invalid">Required field</small>
+            </div>
+            <div class="form-group">
+                <label for="">Date Of Visit<span class="error">*</span></label>
+                <div class="input-group">
+                    <input class="form-control" placeholder="yyyy-mm-dd" formControlName="dataOfVist" ngbDatepicker #datepick="ngbDatepicker">
+                    <button class="btn btn-outline-secondary calendar" (click)="datepick.toggle()" type="button"></button>
+                  </div>
+                <small class="error" *ngIf="dataOfVist && dataOfVist.touched && dataOfVist.invalid">Required field</small>
+            </div>
+            <div class="form-group">
+                <label for="">prescription<span class="error">*</span></label>
+                <input type="text" formControlName="prescription" class="form-control" placeholder="Prescription">
+                <small class="error" *ngIf="prescription && prescription.touched && prescription.invalid">Required field</small>
+            </div>
+            <div class="form-group">
+                <label for="">&nbsp;</label> <br>
+                <button type="submit" [disabled]="patientForm.invalid" class="col-md-12 btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

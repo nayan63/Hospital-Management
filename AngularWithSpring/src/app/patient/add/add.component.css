@@ -1,0 +1,15 @@
+.form-container
+{
+    margin-left: 10vw;
+}
+.error
+{
+    color:red;
+}
+.doctorform
+{
+    background-color: rgba(126, 103, 2, 0.315);
+    padding: 30px;
+    color: black;
+    border-radius: 10px;
+}

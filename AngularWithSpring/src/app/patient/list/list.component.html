@@ -1,0 +1,33 @@
+<div class="table-container">
+    <input type="number" class="form-control" autocomplete="off" #id (input)="search(id.value)" placeholder="Search By ID">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Visited Doctor</th>
+                <th>Date Of Visit</th>
+                <th>Prescription</th>
+            </tr>
+        </thead>
+        
+        <tbody *ngIf="errorMessage; else elseBlock">
+            <tr>
+                <td colspan="6" style="text-align: center;"> <span>{{errorMessage}} </span></td>
+            </tr>
+        </tbody>
+        <ng-template #elseBlock>
+        <tbody class="table-striped">
+            <tr *ngFor="let patient of patients; let i=index">
+                <td>{{patient.id}}</td>
+                <td>{{patient.name}}</td>
+                <td>{{patient.age}}</td>
+                <td>{{patient.visitedDoctor}}</td>
+                <td>{{patient.dataOfVist|date}}</td>
+                <td>{{patient.prescription}}</td>
+            </tr>
+        </tbody>
+        </ng-template>
+    </table>
+</div>

@@ -1,0 +1,29 @@
+.container-search
+{
+    padding: 20px 0 0 20px;
+}
+.border li
+{
+    text-decoration: none;
+    list-style: none;
+}
+.search-section
+{
+    display: flex;
+}
+.container-result
+{
+    margin-top: 20px;
+}
+.table
+{
+    width: 100%;
+}
+.thead-dark
+{
+    background-color: aquamarine;
+}
+.table-striped
+{
+    background-color: aliceblue;
+}
